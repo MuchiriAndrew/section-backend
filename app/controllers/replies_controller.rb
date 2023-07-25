@@ -42,7 +42,7 @@ class RepliesController < ApplicationController
     private
   
     def reply_params
-      params.require(:reply).permit(:user_id, :content, :score, :parent_comment_id)
+      params.require(:reply).permit(:user_id, :content, :score, :parent_comment_id, :timestamp)
     end
   end
   
