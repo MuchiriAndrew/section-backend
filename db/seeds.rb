@@ -2,21 +2,14 @@
 
 
 
-users_with_images = [
-  { username: 'amyrobson', image_url: 'https://i.postimg.cc/Qt9Mh5ms/image-amyrobson.png' },
-  { username: 'maxblagun', image_url: 'https://i.postimg.cc/prc5qxsX/image-maxblagun.png' },
-  { username: 'ramsesmiron', image_url: 'https://i.postimg.cc/LXT1gjfP/image-ramsesmiron.png' },
-  { username: 'juliusomo', image_url: 'https://i.postimg.cc/HsQVrwgk/image-juliusomo.png' }
-]
+com1 = Comment.find_by_id(1)
+ com1.update(timestamp: "2 weeks ago")
 
+ com2 = Comment.find_by_id(2)
+ com2.update(timestamp: "1 week ago")
 
+ rep1 = Reply.find_by_id(1)
+ rep1.update(timestamp: "5 days ago")
 
-
-users_with_images.each do |user_data|
-    user = User.find_by(username: user_data[:username])
-    next unless user 
-  
-    user.image = user_data[:image_url]
-    user.save
-  end
-  
+ rep2 = Reply.find_by_id(2)
+ rep2.update(timestamp: "2 days ago")
