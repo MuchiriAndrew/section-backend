@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_24_105504) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_25_170513) do
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
     t.text "content"
@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_24_105504) do
     t.integer "parent_comment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "timestamp"
     t.index ["parent_comment_id"], name: "index_comments_on_parent_comment_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
@@ -40,6 +41,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_24_105504) do
     t.integer "parent_comment_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "timestamp"
     t.index ["parent_comment_id"], name: "index_replies_on_parent_comment_id"
     t.index ["user_id"], name: "index_replies_on_user_id"
   end
@@ -48,6 +50,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_24_105504) do
     t.string "username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
   end
 
   add_foreign_key "comments", "comments", column: "parent_comment_id"
