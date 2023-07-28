@@ -36,9 +36,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_25_170513) do
 
   create_table "replies", force: :cascade do |t|
     t.integer "score"
-    t.integer "user_id"
+    t.integer "user_id", null: false
     t.text "content"
-    t.integer "parent_comment_id"
+    t.integer "parent_comment_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "timestamp"
